@@ -28,8 +28,8 @@ def meteodata():
     print(type(pp))                  #type is een string
 
 
-    tt=data.json()           # geeft hetzelfde resultaat als json.loads
-    print(tt)                #type is een dictionary
+    # tt=data.json()           # geeft hetzelfde resultaat als json.loads
+    # print(tt)                #type is een dictionary
 
     listtijd = tt['hourly']['time']             #lijst met data (X-as)
     listtemp = tt['hourly']['temperature_2m']   #lijst met temperaturen (Y-as)
@@ -42,57 +42,57 @@ def meteodata():
     # print (min(temp))
     turtle.getscreen()
     t = turtle.Turtle()
-    for i in range(len(tt['hourly']['temperature_2m'])):   #poging tekenen grafiek
-        t.goto(listtijd[i],listtemp[i])
+    for i in range(len(listtijd)):   #poging tekenen grafiek
+        for j in range (len(listtemp)):
+            print (i , j)
+        
+
+
+# def X_as():
+
+#     turtle.setup (width=500, height=500, startx=0, starty=-1)
+#     turtle.getscreen()
+#     t = turtle.Turtle()
+
+#     for i in range (5):
+#         t.fd(5)
+#         t.rt(90)
+#         t.fd(10)
+#         t.bk(10)
+#         t.lt(90)
+#         for i in range (5):
+#             t.forward(5)
+#             t.right(90)
+#             t.forward(5)
+#             t.backward(5)
+#             t.left(90)
+
+
+# def Y_as():
+
+#     scrn=turtle.Screen()
+#     t = turtle.Turtle()
+
+#     t.setheading(90)
+#     for i in range (5):
+#         t.fd(5)
+#         t.lt(90)
+#         t.fd(10)
+#         t.bk(10)
+#         t.rt(90)
+#         for i in range (4):
+#             t.fd(5)
+#             t.lt(90)
+#             t.fd(5)
+#             t.bk(5)
+#             t.rt(90)
 
 
 
-
-def X_as():
-
-    turtle.setup (width=500, height=500, startx=0, starty=-1)
-    turtle.getscreen()
-    t = turtle.Turtle()
-
-    for i in range (5):
-        t.fd(5)
-        t.rt(90)
-        t.fd(10)
-        t.bk(10)
-        t.lt(90)
-        for i in range (5):
-            t.forward(5)
-            t.right(90)
-            t.forward(5)
-            t.backward(5)
-            t.left(90)
-
-
-def Y_as():
-
-    scrn=turtle.Screen()
-    t = turtle.Turtle()
-
-    t.setheading(90)
-    for i in range (5):
-        t.fd(5)
-        t.lt(90)
-        t.fd(10)
-        t.bk(10)
-        t.rt(90)
-        for i in range (4):
-            t.fd(5)
-            t.lt(90)
-            t.fd(5)
-            t.bk(5)
-            t.rt(90)
-
-
-
-X_as()
-Y_as()
+# X_as()
+# Y_as()
 meteodata()
-plaats=input("Kies een stad waarvan je de weersvoorspelling wil zien : typ A voor Antwerpen, L voor London of N voor New-York")
+# plaats=input("Kies een stad waarvan je de weersvoorspelling wil zien : typ A voor Antwerpen, L voor London of N voor New-York")
 
 
 turtle.done()
